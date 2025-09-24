@@ -24,4 +24,5 @@ Console.WriteLine($"Stlacili ste klavesu: {key.KeyChar}");
 Console.WriteLine("Kolko dostanem cash za tento projekt?");
 string text2= Console.ReadLine();
 Console.WriteLine("Tak neni to moc ale na zaciatok staci!");
-Console.WriteLine($"Tak, to by bolo zatial vsetko. Pokracovanie nabuduce.");
+Console.WriteLine($"Tak, to by bolo zatial vsetko.");
+Console.WriteLine("Pokracovanie nabuduce");
