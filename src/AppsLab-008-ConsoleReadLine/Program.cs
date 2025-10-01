@@ -1,28 +1,42 @@
-﻿Console.WriteLine("Ako sa voláš?");
-string? meno = Console.ReadLine();
-Console.WriteLine($"Ahoj,{meno}! Kolko mas rokov?");
-string vstup = Console.ReadLine() ?? "0";
-int vek = int.Parse(vstup);
-Console.WriteLine($"Aha, mas teda {vek} rokov");
-Console.WriteLine("Ake je tvoje oblubune jedlo?");
-string jedlo = Console.ReadLine();
-Console.WriteLine($"Hmmm, {jedlo} to znie skvele!");
-Console.WriteLine("Aky mas dnes den?");
-string den = Console.ReadLine();
-Console.WriteLine("Tak to mas skvele!");
-Console.WriteLine("Preco sa rozpravas s robotom?");
-string text = Console.ReadLine();
-Console.WriteLine("Nemyslis ze si na tom dost zle ked sa musis rozpavat so mnou?");
-string text1 = Console.ReadLine();
-Console.WriteLine("Aka je tvoja oblubena farba?");
-string farba = Console.ReadLine();
-Console.WriteLine($"Hmm, {farba}? Ja poznam aj krajsie ale tak je to tvoja vec. Kazdemu sa paci nieco ine.");
-Console.WriteLine("Stlac klavesu: ");
-var key = Console.ReadKey();
-Console.WriteLine();
-Console.WriteLine($"Stlacili ste klavesu: {key.KeyChar}");
-Console.WriteLine("Kolko dostanem cash za tento projekt?");
-string text2= Console.ReadLine();
-Console.WriteLine("Tak neni to moc ale na zaciatok staci!");
-Console.WriteLine($"Tak, to by bolo zatial vsetko.");
-Console.WriteLine("Pokracovanie nabuduce");
+﻿Console.WriteLine("Vitaj v k alkulacke. Dnes budeme robit s cislami.");
+
+//nacitam cislo
+string? prveCislo = Console.ReadLine();
+
+//nacitam 2. cislo
+string? druheCislo = Console.ReadLine();
+
+// spravim sucet
+int sucet = int.Parse(prveCislo) + int.Parse(druheCislo);
+
+// vypisem sucet
+Console.WriteLine($"Sucet: {sucet}");
+//
+
+
+
+
+//int a = 5;
+//int b = 3;
+
+
+//int sucet = a + b; // 8
+//int rozdiel = a - b; // 2
+//int nasobok = a * b; // 15
+//int podiel = a / b; // 1
+//int zvysok = a % b; //2
+
+//int rovnost = a == b; // false
+//int nerovnost = a != b; // true
+//int vacsie ako = a > b; // true
+//int mensie ako = a < b; // false
+//int vacsieAleboRovne = a >= b; // true
+//int mensieAleboRovne = a<= b; // false
+
+
+
+
+
+
+
+
