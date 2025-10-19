@@ -24,6 +24,11 @@ int nepriatelZivot = 60;
 Console.WriteLine($"Tvoj nepriatel sa vola {nepriatelMeno}, ma silu {nepriatelSila} a zivot {nepriatelZivot}. ");
 Console.WriteLine("Takze ideme na to!");
 //
+Console.WriteLine("Ak chces otvorit inventar tak napis : M; a ak inventar nechces tak napis : K.");
+string InvOpen3 = (Console.ReadLine());
+Console.WriteLine("Inventar mas pazdny; ak chces nieco dostat tak musis vyhrat boj!");
+// 
+
 
 
 // prva arena
@@ -60,7 +65,10 @@ Console.WriteLine("Ak chces otvorit inventar tak napis : M; a ak inventar nechce
 string InvOpen = (Console.ReadLine());
 if (InvOpen.ToString().ToUpper() == "M")
 {
-    Console.WriteLine("Inventar mas pazdny; ak chces nieco dostat tak musis vyhrat boj!");
+    Console.WriteLine("Gratulujem.teraz si mozes vybrat vec z inventara.");
+    Console.WriteLine("Zadaj nazov veci ktoru chces pouzit: ");
+    string vec = Console.ReadLine();
+    inventar.Add(vec);
 }
 else if (InvOpen.ToString().ToUpper() == "K")
 {
@@ -81,15 +89,15 @@ else
     //pouzitie potionu v 1. arene
     if (inventar.Contains("Hp potion"))
 {
-    Console.WriteLine("Chces pouzit Hp potion? Ak ano napis : YES; ak nie napis : NO.");
-    char pouzitPotion = char.Parse(Console.ReadLine());
-    if (pouzitPotion.ToString().ToUpper() == "YES")
+    Console.WriteLine("Chces pouzit Hp potion? Ak ano napis : Yes; ak nie napis : No.");
+    string pouzitPotion = (Console.ReadLine());
+    if (pouzitPotion.ToString().ToUpper() == "Yes")
     {
         Console.WriteLine("Pouzil si Hp potion a tvoj zivot sa zvysil o 10% na 99 zivotov.");
         inventar.Remove("Hp potion");
         inventar.Add("token zivota");
     }
-    else if (pouzitPotion.ToString().ToUpper() == "NO")
+    else if (pouzitPotion.ToString().ToUpper() == "No")
         Console.WriteLine("Pokračujes bez použitia potionu.");
     else
         Console.WriteLine("Zadal si zle slovo, skus to znova!");
@@ -103,15 +111,15 @@ else if (InvOpen.ToString().ToUpper() == "K")
     // pouzitie meca v 1. arene
     if (inventar.Contains("Mec"))
     {
-        Console.WriteLine("Chces pouzit Mec? Ak ano napis : YES; ak nie napis : NO.");
-        char pouzitMec = char.Parse(Console.ReadLine());
-        if (pouzitMec.ToString().ToUpper() == "YES")
+        Console.WriteLine("Chces pouzit Mec? Ak ano napis : Yes; ak nie napis : No.");
+        string pouzitMec = (Console.ReadLine());
+        if (pouzitMec.ToString().ToUpper() == "Yes")
         {
             Console.WriteLine("Pouzil si Mec a tvoja sila sa zvysila o 5% na 33 sily.");
             inventar.Remove("Mec");
             inventar.Add("token sily");
         }
-        else if (pouzitMec.ToString().ToUpper() == "NO")
+        else if (pouzitMec.ToString().ToUpper() == "No")
             Console.WriteLine("Pokračujes bez použitia meca.");
         else
             Console.WriteLine("Zadal si zle slovo, skus to znova!");
@@ -127,21 +135,30 @@ else if (InvOpen.ToString().ToUpper() == "K")
     int nepriatelZivot1 = 65;
     Console.WriteLine($"{nepriatelMeno} ma silu {nepriatelSila1} a zivot {nepriatelZivot1}. ");
     Console.WriteLine("Takze ideme na to!");
-    //
+//
 
 
-    //pouzitie inventara v 2. arene
-    List<string> inventar1 = new List<string>();
-    Console.WriteLine("Ak chces otvorit inventar tak napis : M; a ak inventar nechces tak napis : K.");
-    string InvOpen1 = (Console.ReadLine());
-    if (InvOpen1.ToString().ToUpper() == "M")
-    {
-        Console.WriteLine("Inventar mas pazdny; ak chces nieco dostat tak musis vyhrat boj!");
-    }
-    else if (InvOpen1.ToString().ToUpper() == "K")
-    {
-        Console.WriteLine("Pokračujes bez použitia inventara.");
+//pouzitie inventara v 2. arene
+List<string> inventar1 = new List<string>();
+Console.WriteLine("Ak chces otvorit inventar tak napis : M; a ak inventar nechces tak napis : K.");
+string InvOpen1 = (Console.ReadLine());
+if (InvOpen1.ToString().ToUpper() == "M")
+{
+    Console.WriteLine("Gratulujem.teraz si mozes vybrat vec z inventara.");
+    Console.WriteLine("Zadaj nazov veci ktoru chces pouzit: ");
+    string vec = Console.ReadLine();
+    inventar1.Add(vec);
 }
+else if (InvOpen1.ToString().ToUpper() == "K")
+{
+    Console.WriteLine("Pokračujes bez použitia inventara.");
+}
+else
+{
+    Console.WriteLine("Zadal si zlu klavesu, skus to znova!");
+    InvOpen1 = (Console.ReadLine());
+}
+
 //
 
 
@@ -176,15 +193,15 @@ while (zivot1 > 0 && nepriatelZivot1 > 0)
     //pouzitie potionu v 2. arene
     if (inventar.Contains("Hp potion"))
     {
-        Console.WriteLine("Chces pouzit Hp potion? Ak ano napis : YES; ak nie napis : NO.");
+        Console.WriteLine("Chces pouzit Hp potion? Ak ano napis : Yes; ak nie napis : No.");
         char pouzitPotion = char.Parse(Console.ReadLine());
-        if (pouzitPotion.ToString().ToUpper() == "YES")
+        if (pouzitPotion.ToString().ToUpper() == "Yes")
         {
             Console.WriteLine("Pouzil si Hp potion a tvoj zivot sa zvysil o 10% na 99 zivotov.");
             inventar.Remove("Hp potion");
             inventar.Add("token zivota");
         }
-        else if (pouzitPotion.ToString().ToUpper() == "NO")
+        else if (pouzitPotion.ToString().ToUpper() == "No")
             Console.WriteLine("Pokračujes bez použitia potionu.");
         else
             Console.WriteLine("Zadal si zle slovo, skus to znova!");
@@ -198,15 +215,15 @@ while (zivot1 > 0 && nepriatelZivot1 > 0)
     // pouzitie meca v 2. arene
     if (inventar.Contains("Mec"))
     {
-        Console.WriteLine("Chces pouzit Mec? Ak ano napis : YES; ak nie napis : NO.");
+        Console.WriteLine("Chces pouzit Mec? Ak ano napis : Yes; ak nie napis : No.");
         char pouzitMec = char.Parse(Console.ReadLine());
-        if (pouzitMec.ToString().ToUpper() == "YES")
+        if (pouzitMec.ToString().ToUpper() == "Yes")
         {
             Console.WriteLine("Pouzil si Mec a tvoja sila sa zvysila o 5% na 33 sily.");
             inventar.Remove("Mec");
             inventar.Add("token sily");
         }
-        else if (pouzitMec.ToString().ToUpper() == "NO")
+        else if (pouzitMec.ToString().ToUpper() == "No")
             Console.WriteLine("Pokračujes bez použitia meca.");
         else
             Console.WriteLine("Zadal si zle slovo, skus to znova!");
