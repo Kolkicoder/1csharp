@@ -31,6 +31,7 @@ string[] names = { "Dnes", "sa", "mam", "dobre" };
 foreach (string name in names)
 {
     Console.Write($" {name} ");
+}
 */
 
 
@@ -63,6 +64,8 @@ Console.WriteLine("Zadaj svoj vek");
 string vek =Console.ReadLine();
 */
 
+
+/*
 string meno = ZiskajMeno();
 string vek = ZiskajVek();
 
@@ -87,3 +90,4 @@ void VypisUdaje(string meno, string vek)
 {
     Console.WriteLine($"Ahoj {meno}, tvoj vek je {vek} rokov.");
 }
+*/
