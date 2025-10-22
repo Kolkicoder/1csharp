@@ -105,28 +105,26 @@ else
 
 else if (InvOpen.ToString().ToUpper() == "K")
     Console.WriteLine("Pokračujes bez použitia inventara.");
-    //
+//
 
 
-    // pouzitie meca v 1. arene
-    if (inventar.Contains("Mec"))
+// pouzitie meca v 1. arene
+if (inventar.Contains("Mec"))
+{
+    Console.WriteLine("Chces pouzit Mec? Ak ano napis : Yes; ak nie napis : No.");
+    string pouzitMec = (Console.ReadLine());
+    if (pouzitMec.ToString().ToUpper() == "Yes")
     {
-        Console.WriteLine("Chces pouzit Mec? Ak ano napis : Yes; ak nie napis : No.");
-        string pouzitMec = (Console.ReadLine());
-        if (pouzitMec.ToString().ToUpper() == "Yes")
-        {
-            Console.WriteLine("Pouzil si Mec a tvoja sila sa zvysila o 5% na 33 sily.");
-            inventar.Remove("Mec");
-            inventar.Add("token sily");
-        }
-        else if (pouzitMec.ToString().ToUpper() == "No")
-            Console.WriteLine("Pokračujes bez použitia meca.");
-        else
-            Console.WriteLine("Zadal si zle slovo, skus to znova!");
+        Console.WriteLine("Pouzil si Mec a tvoja sila sa zvysila o 5% na 33 sily.");
+        inventar.Remove("Mec");
+        inventar.Add("token sily");
     }
+    else if (pouzitMec.ToString().ToUpper() == "No")
+        Console.WriteLine("Pokračujes bez použitia meca.");
+
     //
 
-   
+
     // vlasnosti 2. areny
     int sila1 = 30;
     int zivot1 = 90;
@@ -135,35 +133,34 @@ else if (InvOpen.ToString().ToUpper() == "K")
     int nepriatelZivot1 = 65;
     Console.WriteLine($"{nepriatelMeno} ma silu {nepriatelSila1} a zivot {nepriatelZivot1}. ");
     Console.WriteLine("Takze ideme na to!");
-//
+    //
 
+    
+    //pouzitie inventara v 2. arene
+    List<string> inventar1 = new List<string>();
+    Console.WriteLine("Ak chces otvorit inventar tak napis : M; a ak inventar nechces tak napis : K.");
+    string InvOpen1 = (Console.ReadLine());
+    if (InvOpen1.ToString().ToUpper() == "M")
+    {
+        Console.WriteLine("Gratulujem.teraz si mozes vybrat vec z inventara.");
+        Console.WriteLine("Zadaj nazov veci ktoru chces pouzit: ");
+        string vec = Console.ReadLine();
+        inventar1.Add(vec);
+    }
+    else if (InvOpen1.ToString().ToUpper() == "K")
+    {
+        Console.WriteLine("Pokračujes bez použitia inventara.");
+    }
+    else
+    {
+        Console.WriteLine("Zadal si zlu klavesu, skus to znova!");
+        InvOpen1 = (Console.ReadLine());
+    }
+    //
+    
 
-//pouzitie inventara v 2. arene
-List<string> inventar1 = new List<string>();
-Console.WriteLine("Ak chces otvorit inventar tak napis : M; a ak inventar nechces tak napis : K.");
-string InvOpen1 = (Console.ReadLine());
-if (InvOpen1.ToString().ToUpper() == "M")
-{
-    Console.WriteLine("Gratulujem.teraz si mozes vybrat vec z inventara.");
-    Console.WriteLine("Zadaj nazov veci ktoru chces pouzit: ");
-    string vec = Console.ReadLine();
-    inventar1.Add(vec);
-}
-else if (InvOpen1.ToString().ToUpper() == "K")
-{
-    Console.WriteLine("Pokračujes bez použitia inventara.");
-}
-else
-{
-    Console.WriteLine("Zadal si zlu klavesu, skus to znova!");
-    InvOpen1 = (Console.ReadLine());
-}
-
-//
-
-
-// druha arena
-while (zivot1 > 0 && nepriatelZivot1 > 0)
+    // druha arena
+    while (zivot1 > 0 && nepriatelZivot1 > 0)
     {
         Console.WriteLine("Stlac enter pre spustenie utoku!");
         Console.ReadLine();
@@ -216,134 +213,137 @@ while (zivot1 > 0 && nepriatelZivot1 > 0)
     if (inventar.Contains("Mec"))
     {
         Console.WriteLine("Chces pouzit Mec? Ak ano napis : Yes; ak nie napis : No.");
-        char pouzitMec = char.Parse(Console.ReadLine());
-        if (pouzitMec.ToString().ToUpper() == "Yes")
+        char pouzitMec1 = char.Parse(Console.ReadLine());
+        if (pouzitMec1.ToString().ToUpper() == "Yes")
         {
             Console.WriteLine("Pouzil si Mec a tvoja sila sa zvysila o 5% na 33 sily.");
             inventar.Remove("Mec");
             inventar.Add("token sily");
         }
-        else if (pouzitMec.ToString().ToUpper() == "No")
+        else if (pouzitMec1.ToString().ToUpper() == "No")
             Console.WriteLine("Pokračujes bez použitia meca.");
-        else
-            Console.WriteLine("Zadal si zle slovo, skus to znova!");
-    }
-    //
+
+        //
 
 
-    // nepouzil si nic v 2. arene
-    if (!inventar.Contains("Hp potion") && !inventar.Contains("Mec"))
-    {
-        Console.WriteLine("Pokračujes bez použitia inventara.");
-    }
-    //
+        // nepouzil si nic v 2. arene
+        if (!inventar.Contains("Hp potion") && !inventar.Contains("Mec"))
+        {
+            Console.WriteLine("Pokračujes bez použitia inventara.");
+        }
+        //
 
 
-    //pouzitie inventara v 3. arene
-    List<string> inventar2 = new List<string>();
-    Console.WriteLine("Ak chces otvorit inventar tak napis : M; a ak inventar nechces tak napis : K.");
-    char InvOpen2 = char.Parse(Console.ReadLine());
-    if (InvOpen2.ToString().ToUpper() == "M")
-    {
-        Console.WriteLine("Inventar mas pazdny; ak chces nieco dostat tak musis vyhrat boj!");
-    }
+        //pouzitie inventara v 3. arene
+        List<string> inventar2 = new List<string>();
+        Console.WriteLine("Ak chces otvorit inventar tak napis : M; a ak inventar nechces tak napis : K.");
+        char InvOpen2 = char.Parse(Console.ReadLine());
+        if (InvOpen2.ToString().ToUpper() == "M")
+        {
+            Console.WriteLine("Inventar mas pazdny; ak chces nieco dostat tak musis vyhrat boj!");
+        }
 
-    else if (InvOpen2.ToString().ToUpper() == "K")
-    {
-        Console.WriteLine("Pokračujes bez použitia inventara.");
-    }
-    //
-
-
-    // vlasnosti 3. areny
-    int sila2 = 30;
-    int zivot2 = 90;
-    Console.WriteLine($"{meno} ma silu {sila2} a zivot {zivot2}. ");
-    int nepriatelSila2 = 28;
-    int nepriatelZivot2 = 75;
-    Console.WriteLine($"{nepriatelMeno} ma silu {nepriatelSila2} a zivot {nepriatelZivot2}. ");
-    Console.WriteLine("Takze ideme na to!");
-    //
+        else if (InvOpen2.ToString().ToUpper() == "K")
+        {
+            Console.WriteLine("Pokračujes bez použitia inventara.");
+        }
+        //
 
 
-    // tretia arena
-    while (zivot2 > 0 && nepriatelZivot2 > 0)
-    {
-        Console.WriteLine("Stlac enter pre spustenie utoku!");
+        // vlasnosti 3. areny
+        int sila2 = 30;
+        int zivot2 = 90;
+        Console.WriteLine($"{meno} ma silu {sila2} a zivot {zivot2}. ");
+        int nepriatelSila2 = 28;
+        int nepriatelZivot2 = 75;
+        Console.WriteLine($"{nepriatelMeno} ma silu {nepriatelSila2} a zivot {nepriatelZivot2}. ");
+        Console.WriteLine("Takze ideme na to!");
+        //
+
+
+        // tretia arena
+        while (zivot2 > 0 && nepriatelZivot2 > 0)
+        {
+            Console.WriteLine("Stlac enter pre spustenie utoku!");
+            Console.ReadLine();
+            Console.WriteLine($"{nepriatelMeno} zautocil na teba a zranil ta o {nepriatelSila2} zivotov.");
+            zivot2 -= nepriatelSila2;
+            if (zivot2 < 0) zivot2 = 0;
+            Console.WriteLine($"Tvoj zivot je teraz {zivot2}. ");
+            if (zivot2 <= 0)
+            {
+                Console.WriteLine("Prehral si!");
+                break;
+            }
+            Console.WriteLine($"Stlac enter aby {meno} zautocil na {nepriatelMeno}");
+            Console.ReadLine();
+            Console.WriteLine($"{meno} zautocil na {nepriatelMeno} a zranil si ho o {sila2} zivotov");
+            nepriatelZivot2 -= sila2;
+            if (nepriatelZivot2 < 0) nepriatelZivot2 = 0;
+            Console.WriteLine($"Zivot {nepriatelMeno} je teraz {nepriatelZivot2}");
+            if (nepriatelZivot2 <= 0)
+            {
+                Console.WriteLine($"Porazil si {nepriatelMeno} a vyhral si hru! Gratulujem!");
+            }
+        }
+
+
+        // bonusova aréna 
+        Console.WriteLine("Gratulujem ze si vyhral hru! Ak chces pokracovat do bonusovej areny tak napis : Y; ak nie napis : N.");
         Console.ReadLine();
-        Console.WriteLine($"{nepriatelMeno} zautocil na teba a zranil ta o {nepriatelSila2} zivotov.");
-        zivot2 -= nepriatelSila2;
-        if (zivot2 < 0) zivot2 = 0;
-        Console.WriteLine($"Tvoj zivot je teraz {zivot2}. ");
-        if (zivot2 <= 0)
+        if (InvOpen2.ToString().ToUpper() == "Y")
+            Console.WriteLine("Pokračujes do bonusovej arény!");
         {
-            Console.WriteLine("Prehral si!");
-            break;
-        }
-        Console.WriteLine($"Stlac enter aby {meno} zautocil na {nepriatelMeno}");
-        Console.ReadLine();
-        Console.WriteLine($"{meno} zautocil na {nepriatelMeno} a zranil si ho o {sila2} zivotov");
-        nepriatelZivot2 -= sila2;
-        if (nepriatelZivot2 < 0) nepriatelZivot2 = 0;
-        Console.WriteLine($"Zivot {nepriatelMeno} je teraz {nepriatelZivot2}");
-        if (nepriatelZivot2 <= 0)
-        {
-            Console.WriteLine($"Porazil si {nepriatelMeno} a vyhral si hru! Gratulujem!");
+
+            Console.WriteLine("Vitaj v bonusovej arene!");
+            Console.WriteLine("Tvoj nepriatel v bonusovej arene bude matematika!");
+            Console.WriteLine("Tvojou ulohou je vyriesit 3 priklady spravne aby si vyhral bonusovu arenu!");
+            int score = 0;
+            Console.WriteLine("Priklad 1: Kolko je 5 + 8 * 4 ?");
+            int answer1 = int.Parse(Console.ReadLine());
+            if (answer1 == 37)
+            {
+                score++;
+                Console.WriteLine("Spravne!");
+            }
+            else
+            {
+                Console.WriteLine("Nespravne!");
+            }
+            Console.WriteLine("Priklad 2: Kolko je (10 + 5) / 5 * 16 ?");
+            int answer2 = int.Parse(Console.ReadLine());
+            if (answer2 == 48)
+            {
+                score++;
+                Console.WriteLine("Spravne!");
+            }
+            else
+            {
+                Console.WriteLine("Nespravne!");
+            }
+            Console.WriteLine("Priklad 3: Kolko je 18 + 2 ?");
+            int answer3 = int.Parse(Console.ReadLine());
+            if (answer3 == 20)
+            {
+                score++;
+                Console.WriteLine("Spravne!");
+            }
+            else
+            {
+                Console.WriteLine("Nespravne!");
+            }
+            if (score == 3)
+            {
+                Console.WriteLine("Gratulujem! Vyriesil si vsetky priklady spravne a vyhral bonusovu arenu!");
+            }
+            else
+            {
+                Console.WriteLine($"Vyriesil si {score} z 3 prikladov spravne. Skus to znova nabuduce!");
+            }
         }
     }
+}
+            
 
-
-    // bonusova aréna 
-    Console.WriteLine("Gratulujem ze si vyhral hru! Ak chces pokracovat do bonusovej areny tak napis : Y; ak nie napis : N.");
-    Console.ReadLine();
-    if (InvOpen2.ToString().ToUpper() == "Y")
-    Console.WriteLine("Pokračujes do bonusovej arény!");
-    {
-
-        Console.WriteLine("Vitaj v bonusovej arene!");
-        Console.WriteLine("Tvoj nepriatel v bonusovej arene bude matematika!");
-        Console.WriteLine("Tvojou ulohou je vyriesit 3 priklady spravne aby si vyhral bonusovu arenu!");
-        int score = 0;
-        Console.WriteLine("Priklad 1: Kolko je 5 + 8 * 4 ?");
-        int answer1 = int.Parse(Console.ReadLine());
-        if (answer1 == 37)
-        {
-            score++;
-            Console.WriteLine("Spravne!");
-        }
-        else
-        {
-            Console.WriteLine("Nespravne!");
-        }
-        Console.WriteLine("Priklad 2: Kolko je (10 + 5) / 5 * 16 ?");
-        int answer2 = int.Parse(Console.ReadLine());
-        if (answer2 == 48)
-        {
-            score++;
-            Console.WriteLine("Spravne!");
-        }
-        else
-        {
-            Console.WriteLine("Nespravne!");
-        }
-        Console.WriteLine("Priklad 3: Kolko je 18 + 2 ?");
-        int answer3 = int.Parse(Console.ReadLine());
-        if (answer3 == 20)
-        {
-            score++;
-            Console.WriteLine("Spravne!");
-        }
-        else
-        {
-            Console.WriteLine("Nespravne!");
-        }
-        if (score == 3)
-        {
-            Console.WriteLine("Gratulujem! Vyriesil si vsetky priklady spravne a vyhral bonusovu arenu!");
-        }
-        else
-        {
-            Console.WriteLine($"Vyriesil si {score} z 3 prikladov spravne. Skus to znova nabuduce!");
-        }
-    }
+    
 
